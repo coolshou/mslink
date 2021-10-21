@@ -17,9 +17,9 @@
  */
 
 /*
- * Cette application permet de créer un Raccourci Windows (Fichier .LNK)
+ *  This application allows you to create a Windows Shortcut (.LNK file)
  *
- * Application créée en se basant sur la doc
+ * Application created based on the doc
  *   http://msdn.microsoft.com/en-us/library/dd871305.aspx
  */
 
@@ -392,7 +392,7 @@ void selectPrefix() {
 	}
 }
 
-/* Nécessaire à partir de Vista et supérieur sinon le lien est considéré comme vide (je n'ai trouvé nul part d'informations à ce sujet) */
+/* Necessary from Vista and higher, otherwise the link is considered empty (I haven't found any information on this subject) */
 void fillTarget_with_0() {
 	TARGET_ROOT_fill_with_0 = calloc(strlen(TARGET_ROOT)+22, sizeof(char));
 	if (TARGET_ROOT_fill_with_0 == NULL) exit(2);
@@ -402,25 +402,25 @@ void fillTarget_with_0() {
 
 void displayInfos() {
 	/* Affiche une information sur la création du raccourci */
-	printf("Création d'un raccourci de type \"");
+	printf("Creation of a shortcut of type \"");
 	if (IS_PRINTER_LINK) {
-		printf("imprimante");
+		printf("printer");
 	}
 	else {
 		if (extension_strlen >= 1 && extension_strlen <= 3) {
-			printf("fichier");
+			printf("file");
 		}
 		else {
-			printf("dossier");
+			printf("folder");
 		}
 	}
 	if (IS_NETWORK_LNK) {
-		printf(" réseau");
+		printf(" network");
 	}
 	else {
 		printf(" local");
 	}
-	printf("\" avec pour cible %s %s\n", LNK_TARGET_ori, param_HasArguments == NULL ? "" : param_HasArguments);
+	printf("\" with the target %s %s\n", LNK_TARGET_ori, param_HasArguments == NULL ? "" : param_HasArguments);
 }
 
 void writeToFile() {

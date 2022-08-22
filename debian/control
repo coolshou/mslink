@@ -1,0 +1,16 @@
+Source: mslink
+Section: unknown
+Priority: optional
+Maintainer: coolshou <coolshou2060@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: http://www.mamachine.org/mslink/index.en.html
+#Vcs-Browser: https://github.com/coolshou/mslink
+Vcs-Git: https://github.com/coolshou/mslink.git
+Rules-Requires-Root: no
+
+Package: mslink
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: create a Windows Shortcut (.LNK file) without dependencies with Microsoft libraries
+ This application allow you to create Windows Shortcut files (extension .LNK) without needing a Windows OS.
